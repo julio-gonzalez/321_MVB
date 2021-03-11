@@ -176,7 +176,7 @@ def handle_join(transaction,utp_index,chain,blockchain):
             for i in range(len(transaction_input)):
                 if temp_trans['NUMBER'] == transaction_input[i]:
                     #TODO: check trans type, if it's a merge, will need to get every recipient coins[ ]
-                    if temp_trans['TYPE'] == 'MERGE':
+                    if temp_trans['TYPE'] == 'JOIN':
                         pass
                     else:
                         prev_output = temp_trans['OUTPUT'][0]
@@ -487,7 +487,6 @@ def run_transaction():
     UTP.append(trans_5)
 
     """
-
     TODO:   Add 4 more transactions, transer[X], join[X], and merge[X]
             Atleast one malicious transaction (e.g. a double spend)[ ], and at least one invalid transaction[ ] 
             (e.g. one that is improperly signed, transfers more coins then are possessed, disobeys the conservation of coins, etc.).
